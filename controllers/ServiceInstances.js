@@ -34,9 +34,16 @@ module.exports.serviceInstanceLastOperationGetUsingGET = function serviceInstanc
 };
 
 module.exports.serviceInstanceProvisionUsingPUT = function serviceInstanceProvisionUsingPUT (req, res, next, body, accepts_incomplete, instance_id, xBrokerAPIVersion, xBrokerAPIOriginatingIdentity) {
-  console.log("******* PROVISION ********");
+  console.log("******* PROVISION REQ ********");
+  console.log(JSON.stringify(req));
+  console.log("******* PROVISION HEADERS ********");
   console.log(JSON.stringify(req.headers));
+  console.log("******* PROVISION RES ********");
   console.log(JSON.stringify(res));
+  console.log("******* PROVISION BODY ********");
+  console.log(JSON.stringify(body));
+  console.log("****** xBrokerAPIOriginatingIdentity *********);
+  console.log(xBrokerAPIOriginatingIdentity);            
   ServiceInstances.serviceInstanceProvisionUsingPUT(body, accepts_incomplete, instance_id, xBrokerAPIVersion, xBrokerAPIOriginatingIdentity)
     .then(function (response) {
       utils.writeJson(res, response);
