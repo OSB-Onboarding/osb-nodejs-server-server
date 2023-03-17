@@ -42,7 +42,7 @@ module.exports.serviceInstanceProvisionUsingPUT = function serviceInstanceProvis
   console.log(JSON.stringify(res));
   console.log("******* PROVISION BODY ********");
   console.log(JSON.stringify(body));
-  console.log("****** xBrokerAPIOriginatingIdentity *********);
+  console.log("****** xBrokerAPIOriginatingIdentity *********");
   console.log(xBrokerAPIOriginatingIdentity);            
   ServiceInstances.serviceInstanceProvisionUsingPUT(body, accepts_incomplete, instance_id, xBrokerAPIVersion, xBrokerAPIOriginatingIdentity)
     .then(function (response) {
